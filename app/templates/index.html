@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.city.label }}
+            {{ form.city(class="form-control") }}
+        </p>
+        <p>{{ form.submit(class="btn btn-success") }}</p>
+    </form>
+    <div class="card mb-3" style="max-width: 340px;">
+        <div class="col-md-8">
+          <div class="card-body">
+              <h5 class="card-title">
+                  {{ weather.city|capitalize }}
+              </h5>
+              <p class="card-text">
+              {{ weather.temp }}
+              </p>
+            <p class="card-text">
+                <small class="text-muted">
+                    {{ weather.summary }}
+                </small>
+            </p>
+        </div>
+      </div>
+    </div>
+{% endblock %}
